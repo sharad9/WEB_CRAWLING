@@ -9,12 +9,12 @@ public class CrawledUrl {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "url", length = 2083)  // 2083 is the max length for URLs in most browsers
+    @Column(name = "url", length = 2083) 
     private String url;
 
     @ManyToOne
     @JoinColumn(name = "crawl_result_id")
-    @JsonIgnore // ✅ Prevents infinite recursion
+    @JsonIgnore
     private CrawlResult crawlResult;
 
     public CrawledUrl() {}
